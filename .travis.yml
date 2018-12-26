@@ -1,0 +1,34 @@
+services: docker
+addons:
+  apt:
+    packages:
+      - python-pip
+
+env:
+  global:
+    - PACKAGE_NAME=neonavigation_rviz_plugins
+  matrix:
+    - ROS_DISTRO_TARGET=indigo
+    - ROS_DISTRO_TARGET=kinetic
+    - ROS_DISTRO_TARGET=melodic
+branches:
+  only:
+    - master
+
+before_install:
+  - pip install --user gh-pr-comment
+
+install: true
+
+script:
+  - docker build
+    -t neonavigation-rviz-plugins
+    -f Dockerfile.${ROS_DISTRO_TARGET}
+    --pull=true ${TRAVIS_BUILD_DIR} || (gh-pr-comment "[#${TRAVIS_BUILD_NUMBER}] FAILED on ${ROS_DISTRO_TARGET}" "docker build failed"; false)
+  - docker run --rm -it
+    -e TRAVIS_PULL_REQUEST
+    -e TRAVIS_PULL_REQUEST_SLUG
+    -e TRAVIS_BOT_GITHUB_TOKEN
+    -e GITHUB_API_URL_BASE
+    -e TRAVIS_BUILD_NUMBER
+    neonavigation-rviz-plugins /catkin_ws/src/${PACKAGE_NAME}/.travis/test.sh
