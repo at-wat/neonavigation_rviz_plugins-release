@@ -1,0 +1,12 @@
+Source: ros-melodic-trajectory-tracker-rviz-plugins
+Section: misc
+Priority: extra
+Maintainer: Atsushi Watanabe <atsushi.w@ieee.org>
+Build-Depends: debhelper (>= 9.0.0), qtbase5-dev, ros-melodic-catkin, ros-melodic-pluginlib, ros-melodic-rviz, ros-melodic-trajectory-tracker-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-trajectory-tracker-rviz-plugins
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5core5a, libqt5gui5, libqt5widgets5, ros-melodic-pluginlib, ros-melodic-rviz, ros-melodic-trajectory-tracker-msgs
+Description: Rviz plugins for trajectory_tracker_msgs
