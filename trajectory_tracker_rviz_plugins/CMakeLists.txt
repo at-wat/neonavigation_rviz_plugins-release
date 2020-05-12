@@ -1,33 +1,21 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(trajectory_tracker_rviz_plugins)
 
-find_package(catkin REQUIRED
-  COMPONENTS
-    pluginlib
-    rviz
-    trajectory_tracker_msgs
-)
-catkin_package(
-  CATKIN_DEPENDS
-    pluginlib
-    rviz
-    trajectory_tracker_msgs
+set(CATKIN_DEPENDS
+  pluginlib
+  rviz
+  trajectory_tracker_msgs
 )
 
-include_directories(${catkin_INCLUDE_DIRS} include)
+find_package(catkin REQUIRED COMPONENTS ${CATKIN_DEPENDS})
+catkin_package(CATKIN_DEPENDS ${CATKIN_DEPENDS})
 
-include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
-if(COMPILER_SUPPORTS_CXX11)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-elseif(COMPILER_SUPPORTS_CXX0X)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-else()
-  message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
-endif()
 
+add_compile_options(-std=c++11)
+include_directories(include ${catkin_INCLUDE_DIRS})
 set(CMAKE_AUTOMOC ON)
+add_definitions(-DQT_NO_KEYWORDS)
+
 
 if(rviz_QT_VERSION VERSION_LESS "5")
   message(STATUS "Using Qt4 based on the rviz_QT_VERSION: ${rviz_QT_VERSION}")
@@ -57,13 +45,13 @@ if(HAVE_VALIDATE_QUATERNION_H)
   add_definitions(-DHAVE_VALIDATE_QUATERNION_H)
 endif()
 
-add_definitions(-DQT_NO_KEYWORDS)
 
 add_library(${PROJECT_NAME}
   src/path_with_velocity_display.cpp
   ${MOC_FILES}
 )
 target_link_libraries(${PROJECT_NAME} ${QT_LIBRARIES} ${catkin_LIBRARIES})
+
 
 install(TARGETS
   ${PROJECT_NAME}
