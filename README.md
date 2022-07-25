@@ -1,3 +1,29 @@
+## neonavigation_rviz_plugins (melodic) - 0.11.6-1
+
+The packages in the `neonavigation_rviz_plugins` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -y --no-web --ros-distro melodic --override-release-repository-push-url https://github.com/at-wat/neonavigation_rviz_plugins-release.git --debug neonavigation_rviz_plugins` on `Mon, 25 Jul 2022 08:20:07 -0000`
+
+These packages were released:
+- `costmap_cspace_rviz_plugins`
+- `neonavigation_rviz_plugins`
+- `trajectory_tracker_rviz_plugins`
+
+Version of package(s) in repository `neonavigation_rviz_plugins`:
+
+- upstream repository: https://github.com/at-wat/neonavigation_rviz_plugins.git
+- release repository: https://github.com/at-wat/neonavigation_rviz_plugins-release.git
+- rosdistro version: `0.3.1-1`
+- old version: `0.3.1-1`
+- new version: `0.11.6-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.1`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## neonavigation_rviz_plugins (noetic) - 0.3.1-1
 
 The packages in the `neonavigation_rviz_plugins` repository were released into the `noetic` distro by running `/usr/local/bin/bloom-release neonavigation_rviz_plugins --track noetic --ros-distro noetic` on `Tue, 12 May 2020 11:08:54 -0000`
