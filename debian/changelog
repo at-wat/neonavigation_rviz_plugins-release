@@ -1,0 +1,29 @@
+ros-noetic-neonavigation-rviz-plugins (0.11.6-1buster) buster; urgency=high
+
+
+
+ -- Atsushi Watanabe <atsushi.w@ieee.org>  Mon, 25 Jul 2022 00:00:00 -0000
+
+ros-noetic-neonavigation-rviz-plugins (0.3.1-1buster) buster; urgency=high
+
+
+
+ -- Atsushi Watanabe <atsushi.w@ieee.org>  Tue, 12 May 2020 00:00:00 -0000
+
+ros-noetic-neonavigation-rviz-plugins (0.3.0-1buster) buster; urgency=high
+
+  * Add trajectory_tracker_msgs plugin (#1 <https://github.com/at-wat/neonavigation_rviz_plugins/issues/1>)
+    
+      * Initial drop
+      * Add CI
+      * Fix build errors and warnings
+      * Disable quaternion validation on indigo
+      * Don't validate linear_velocity field
+      * Add package README
+      * Cleanup code
+    
+  * Contributors: Atsushi Watanabe
+
+ -- Atsushi Watanabe <atsushi.w@ieee.org>  Fri, 21 Dec 2018 00:00:00 -0000
+
+
