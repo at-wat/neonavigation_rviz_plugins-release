@@ -2,6 +2,9 @@
 Changelog for package trajectory_tracker_rviz_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.11.6 (2022-07-25)
+-------------------
+
 0.3.1 (2020-05-12)
 ------------------
 * Drop ROS Indigo and Ubuntu Trusty support (`#6 <https://github.com/at-wat/neonavigation_rviz_plugins/issues/6>`_)
