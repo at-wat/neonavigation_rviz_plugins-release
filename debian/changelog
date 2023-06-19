@@ -1,0 +1,14 @@
+ros-melodic-costmap-cspace-rviz-plugins (0.11.7-1bionic) bionic; urgency=high
+
+
+
+ -- Atsushi Watanabe <atsushi.w@ieee.org>  Mon, 19 Jun 2023 00:00:00 -0000
+
+ros-melodic-costmap-cspace-rviz-plugins (0.11.6-1bionic) bionic; urgency=high
+
+  * Add rviz plugin for costmap_cspace_msgs::CSpace3D (#34 <https://github.com/at-wat/neonavigation_rviz_plugins/issues/34>)
+  * Contributors: Naotaka Hatao
+
+ -- Atsushi Watanabe <atsushi.w@ieee.org>  Mon, 25 Jul 2022 00:00:00 -0000
+
+
